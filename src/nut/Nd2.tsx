@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -19,7 +20,7 @@ interface DayData {
   date: string;
   time: string;
   period: string;
-  active:boolean;
+  active: boolean;
 }
 
 const NUTNd2: React.FC = () => {
@@ -77,10 +78,10 @@ const NUTNd2: React.FC = () => {
       id: index + 1,
       name: day,
       course: "",
-      date: '',
+      date: "",
       time: "",
       period: "",
-      active:false,
+      active: false,
     })),
   });
 
@@ -89,7 +90,7 @@ const NUTNd2: React.FC = () => {
     index: number
   ) => {
     const value = event.target.value;
-    const timeOptions = {
+    const timeOptions: Record<string, string> = {
       morning: "9am-12pm",
       afternoon: "1pm-4pm",
       evening: "3pm-6pm",
@@ -115,7 +116,15 @@ const NUTNd2: React.FC = () => {
       <Tabs defaultValue="day1" className="w-full">
         <TabsList className="flex gap-x-3">
           {numberOfDays.map((day, index) => (
-            <TabsTrigger value={day} key={index} className={`flex-1 ${(finalDataNd2.data[index].active == true) ? "bg-green-500": "bg-red-500" }`}>
+            <TabsTrigger
+              value={day}
+              key={index}
+              className={`flex-1 ${
+                finalDataNd2.data[index].active == true
+                  ? "bg-green-500"
+                  : "bg-red-500"
+              }`}
+            >
               Day {index + 1}
             </TabsTrigger>
           ))}
@@ -126,7 +135,7 @@ const NUTNd2: React.FC = () => {
             <div className="w-full h-full flex justify-center items-center">
               <Card className="w-[30rem] border-black">
                 <CardHeader>
-                <div className="flex justify-between">
+                  <div className="flex justify-between">
                     <CardTitle className="text-2xl">Day {index + 1} </CardTitle>
                     <CardTitle className="text-2xl">
                       {finalDataNd2.data[index].course}
@@ -165,16 +174,17 @@ const NUTNd2: React.FC = () => {
                         type="date"
                         placeholder="date"
                         value={formatSelectedDate(selectedDates[index])} // Display formatted date
-                        onChange={(e) => setfinalDataNd2((prevData) => ({
-                          data: prevData.data.map((dayData, dataIndex) => ({
-                            ...dayData,
-                            date:
-                              dataIndex === index
-                                ? e.target.value
-                                : dayData.date,
-                          })),
-                        }))
-
+                        onChange={
+                          (e) =>
+                            setfinalDataNd2((prevData) => ({
+                              data: prevData.data.map((dayData, dataIndex) => ({
+                                ...dayData,
+                                date:
+                                  dataIndex === index
+                                    ? e.target.value
+                                    : dayData.date,
+                              })),
+                            }))
 
                           // setSelectedDates((prevDates) => {
                           //   const newDates = [...prevDates];
@@ -183,10 +193,7 @@ const NUTNd2: React.FC = () => {
                           // })
                         }
                       />
-                      <p>
-                        Selected Date:{" "}
-                        {finalDataNd2.data[index].date}
-                      </p>
+                      <p>Selected Date: {finalDataNd2.data[index].date}</p>
                     </div>
 
                     <div>
@@ -216,12 +223,9 @@ const NUTNd2: React.FC = () => {
                       setfinalDataNd2((prevData) => ({
                         data: prevData.data.map((dayData, dataIndex) => ({
                           ...dayData,
-                          active:
-                            dataIndex === index
-                              ? true
-                              : dayData.active,
+                          active: dataIndex === index ? true : dayData.active,
                         })),
-                      }))
+                      }));
                       console.log(finalDataNd2);
                     }}
                   >

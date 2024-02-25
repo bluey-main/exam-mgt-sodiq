@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -91,7 +92,7 @@ const Nd1: React.FC = () => {
     index: number
   ) => {
     const value = event.target.value;
-    const timeOptions = {
+    const timeOptions:Record<string, string> = {
       morning: "9am-12pm",
       afternoon: "1pm-4pm",
       evening: "3pm-6pm",
@@ -226,7 +227,7 @@ const Nd1: React.FC = () => {
                       toast({
                         description: "Your message has been sent.",
                       });
-                      
+
                       setFinalDataNd1((prevData) => ({
                         data: prevData.data.map((dayData, dataIndex) => ({
                           ...dayData,
