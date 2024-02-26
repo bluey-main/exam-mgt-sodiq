@@ -229,9 +229,9 @@ export default function Dashboard() {
                   return (
                     <Accordion type="single" collapsible key={index}>
                       <AccordionItem value={item.name}>
-                        <AccordionTrigger>
-                          <FiBook className="text-3xl" />
-
+                        <AccordionTrigger className="text-left">
+                          <FiBook className="text-2xl" />
+                          
                           {item.name}
                         </AccordionTrigger>
                         <AccordionContent className="px-10">
