@@ -38,7 +38,7 @@ const TETNd1: React.FC = () => {
     "day10",
   ];
 
-  const [selectedDates, setSelectedDates] = useState<Date[]>(
+  const [selectedDates] = useState<Date[]>(
     numberOfDays.map(() => new Date())
   );
 
@@ -91,7 +91,7 @@ const TETNd1: React.FC = () => {
     index: number
   ) => {
     const value = event.target.value;
-    const timeOptions = {
+    const timeOptions:Record<string, string> = {
       morning: "9am-12pm",
       afternoon: "1pm-4pm",
       evening: "3pm-6pm",

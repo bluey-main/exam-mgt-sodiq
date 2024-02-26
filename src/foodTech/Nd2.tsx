@@ -37,7 +37,7 @@ const FTNd2: React.FC = () => {
     "day10",
   ];
 
-  const [selectedDates, setSelectedDates] = useState<Date[]>(
+  const [selectedDates] = useState<Date[]>(
     numberOfDays.map(() => new Date())
   );
 

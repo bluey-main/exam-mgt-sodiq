@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -37,7 +37,7 @@ const HMTHnd1: React.FC = () => {
     "day10",
   ];
 
-  const [selectedDates, setSelectedDates] = useState<Date[]>(
+  const [selectedDates] = useState<Date[]>(
     numberOfDays.map(() => new Date())
   );
 

@@ -93,7 +93,7 @@ export default function Register() {
             variant={"outline"}
             className="bg-black text-white w-28 hover:bg-white hover:text-black "
             onClick={() => {
-              console.log(email, password,role);
+              console.log(email, password,role,confirmPassword);
             }}
           >
             Sign Up
