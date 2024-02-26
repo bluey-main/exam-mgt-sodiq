@@ -7,7 +7,6 @@
 //   CardTitle,
 // } from "@/components/ui/card";
 import yctLogo from "./assets/yct.png";
-import { FaTableList } from "react-icons/fa6"; 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -31,7 +30,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { ScrollArea } from "@/components/ui/scroll-area";
+
 import { useState } from "react";
 import Nd1 from "./computerTech/Nd1";
 import Nd2 from "./computerTech/Nd2";
