@@ -6,7 +6,8 @@
 //   CardHeader,
 //   CardTitle,
 // } from "@/components/ui/card";
-import yctLogo from './assets/yct.png'
+import yctLogo from "./assets/yct.png";
+import { FaTableList } from "react-icons/fa6"; 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -30,7 +31,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { useState } from "react";
 import Nd1 from "./computerTech/Nd1";
 import Nd2 from "./computerTech/Nd2";
@@ -54,10 +55,11 @@ import TETHnd1 from "./tet/Hnd1";
 import TETHnd2 from "./tet/Hnd2";
 import PLTNd1 from "./plt/Nd1";
 import PLTNd2 from "./plt/Nd2";
+import Timetable from "./timetable";
 
 export default function Dashboard() {
-  const [displayComponent, setDisplayComponent] = useState(<Nd1/>)
-  const [activePage, setActivePage] = useState('')
+  const [displayComponent, setDisplayComponent] = useState(<Nd1 />);
+  const [activePage, setActivePage] = useState("");
   const allClasses = [
     {
       id: 1,
@@ -66,22 +68,22 @@ export default function Dashboard() {
         {
           id: 1,
           name: "ND1",
-          route: <Nd1/>
+          route: <Nd1 />,
         },
         {
           id: 2,
           name: "ND2",
-          route: <Nd2/>
+          route: <Nd2 />,
         },
         {
           id: 3,
           name: "HND1",
-          route: <Hnd1/>
+          route: <Hnd1 />,
         },
         {
           id: 4,
           name: "HND2",
-          route: <Hnd2/>
+          route: <Hnd2 />,
         },
       ],
     },
@@ -92,22 +94,22 @@ export default function Dashboard() {
         {
           id: 1,
           name: "ND1",
-          route: <FTNd1/>
+          route: <FTNd1 />,
         },
         {
           id: 2,
           name: "ND2",
-          route: <FTNd2/>
+          route: <FTNd2 />,
         },
         {
           id: 3,
           name: "HND1",
-          route: <FTHnd1/>
+          route: <FTHnd1 />,
         },
         {
           id: 4,
           name: "HND2",
-          route: <FTHnd2/>
+          route: <FTHnd2 />,
         },
       ],
     },
@@ -118,22 +120,22 @@ export default function Dashboard() {
         {
           id: 1,
           name: "ND1",
-          route: <NUTNd1/>
+          route: <NUTNd1 />,
         },
         {
           id: 2,
           name: "ND2",
-          route: <NUTNd2/>
+          route: <NUTNd2 />,
         },
         {
           id: 3,
           name: "HND1",
-          route: <NUTHnd1/>
+          route: <NUTHnd1 />,
         },
         {
           id: 4,
           name: "HND2",
-          route: <NUTHnd2/>
+          route: <NUTHnd2 />,
         },
       ],
     },
@@ -145,22 +147,22 @@ export default function Dashboard() {
         {
           id: 1,
           name: "ND1",
-          route: <HMTNd1/>
+          route: <HMTNd1 />,
         },
         {
           id: 2,
           name: "ND2",
-          route: <HMTNd2/>
+          route: <HMTNd2 />,
         },
         {
           id: 3,
           name: "HND1",
-          route: <HMTHnd1/>
+          route: <HMTHnd1 />,
         },
         {
           id: 4,
           name: "HND2",
-          route: <HMTHnd2/>
+          route: <HMTHnd2 />,
         },
       ],
     },
@@ -172,22 +174,22 @@ export default function Dashboard() {
         {
           id: 1,
           name: "ND1",
-          route: <TETNd1/>
+          route: <TETNd1 />,
         },
         {
           id: 2,
           name: "ND2",
-          route: <TETNd2/>
+          route: <TETNd2 />,
         },
         {
           id: 3,
           name: "HND1",
-          route: <TETHnd1/>
+          route: <TETHnd1 />,
         },
         {
           id: 4,
           name: "HND2",
-          route: <TETHnd2/>
+          route: <TETHnd2 />,
         },
       ],
     },
@@ -199,61 +201,77 @@ export default function Dashboard() {
         {
           id: 1,
           name: "ND1",
-          route: <PLTNd1/>
+          route: <PLTNd1 />,
         },
         {
           id: 2,
           name: "ND2",
-          route: <PLTNd2/>
+          route: <PLTNd2 />,
         },
-      
       ],
     },
   ];
   return (
     <div className="w-full h-screen bg-orange- flex">
       <ResizablePanelGroup direction="horizontal">
-        <ResizablePanel minSize={20} className="border-2 border-black bg-green-600 text-white">
+        <ResizablePanel
+          minSize={20}
+          className="border-2 border-black bg-green-600 text-white"
+        >
           <div className="w-full h-[15%] bg-purple- flex px-10 my-10 items-center gap-x-5 ">
-            <img src={yctLogo} className='h-full' />
-            <h1 className='text-2xl'>Exam Management System</h1>
+            <img src={yctLogo} className="h-full" />
+            <h1 className="text-2xl">Exam Management System</h1>
           </div>
-          <div className="w-full h-[85%] bg-amber- flex flex-col gap-y-5 px-10 ">
-            <ScrollArea>
-            {allClasses.map((item, index) => {
-              {
-                return (
-                  <Accordion type="single" collapsible key={index}>
-                    <AccordionItem value={item.name}>
-                      <AccordionTrigger>
-                        <FiBook className="text-3xl" />
+          <div className="w-full h-[85%] bg-amber- flex flex-col gap-y-5 px-10 overflow-y-auto ">
+            <div className="h-[65%] bg-blue overflow-x-hidden overflow-y-auto">
+              
+              {allClasses.map((item, index) => {
+                {
+                  return (
+                    <Accordion type="single" collapsible key={index}>
+                      <AccordionItem value={item.name}>
+                        <AccordionTrigger>
+                          <FiBook className="text-3xl" />
 
-                        {item.name}
-                      </AccordionTrigger>
-                      <AccordionContent className="px-10">
-                        {item.classes.map((classItem, index) => {
-                          return (
-                            <div
-                              key={index}
-                              className="w-full h-11 bg-pink- flex items-center gap-x-5 cursor-pointer"
-                              onClick={() => {
-                                setDisplayComponent(classItem.route)
-                                setActivePage(`${classItem.name} ${item.name}`)
-                              }}
-                            >
-                              <FaPlus className="text-2xl" />
-                              <p>{classItem.name}</p>
-                            </div>
-                          );
-                        })}
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                );
-              }
-            })}
-            </ScrollArea>
-            
+                          {item.name}
+                        </AccordionTrigger>
+                        <AccordionContent className="px-10">
+                          {item.classes.map((classItem, index) => {
+                            return (
+                              <div
+                                key={index}
+                                className="w-full h-11 bg-pink- flex items-center gap-x-5 cursor-pointer"
+                                onClick={() => {
+                                  setDisplayComponent(classItem.route);
+                                  setActivePage(
+                                    `${classItem.name} ${item.name}`
+                                  );
+                                }}
+                              >
+                                <FaPlus className="text-2xl" />
+                                <p>{classItem.name}</p>
+                              </div>
+                            );
+                          })}
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                  );
+                }
+              })}
+
+              
+            </div>
+            <div
+                className="w-full h-11 bg-pink- flex items-center justify-center cursor-pointer bg-yellow-500 mt-10 rounded-xl"
+                onClick={() => {
+                  setDisplayComponent(<Timetable />);
+                  setActivePage("TimeTable");
+                }}
+              >
+                {/* <FaTableList  className="text-4xl " /> */}
+                <p className="text-xl font-bold text-green-950">TimeTable</p>
+              </div>
           </div>
         </ResizablePanel>
 
@@ -281,9 +299,8 @@ export default function Dashboard() {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          <div className="w-full h-[85%] bg-slate">
+          <div className="w-full h-[85%] bg-slate overflow-y-auto">
             {displayComponent}
-          
           </div>
         </ResizablePanel>
       </ResizablePanelGroup>
