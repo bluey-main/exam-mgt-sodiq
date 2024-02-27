@@ -82,6 +82,12 @@ const HMTHnd2: React.FC = () => {
     })),
   });
 
+  const finalData = {
+    department:'HOSPITALITY MANAGEMENT',
+    class:'HND2',
+    data: finalDataHnd2
+  }
+
   const handleOptionChange = (
     event: React.ChangeEvent<HTMLInputElement>,
     index: number
@@ -220,7 +226,7 @@ const HMTHnd2: React.FC = () => {
                               : dayData.active,
                         })),
                       }))
-                      console.log(finalDataHnd2);
+                      console.log(finalData);
                     }}
                   >
                     Set Date

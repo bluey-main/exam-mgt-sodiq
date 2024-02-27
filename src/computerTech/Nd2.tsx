@@ -85,6 +85,12 @@ const Nd2: React.FC = () => {
     })),
   });
 
+  const finalData = {
+    department:'COMPUTER TECHNOLOGY',
+    class:'ND2',
+    data: finalDataNd2
+  }
+
   const handleOptionChange = (
     event: React.ChangeEvent<HTMLInputElement>,
     index: number
@@ -223,7 +229,7 @@ const Nd2: React.FC = () => {
                               : dayData.active,
                         })),
                       }))
-                      console.log(finalDataNd2);
+                      console.log(finalData);
                     }}
                   >
                     Set Date

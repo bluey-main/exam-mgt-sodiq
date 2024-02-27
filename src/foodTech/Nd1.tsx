@@ -87,6 +87,12 @@ const FTNd1: React.FC = () => {
     })),
   });
 
+  const finalData = {
+    department:'FOOD TECHNOLOGY',
+    class:'ND1',
+    data: finalDataNd1
+  }
+
   const handleOptionChange = (
     event: React.ChangeEvent<HTMLInputElement>,
     index: number
@@ -236,7 +242,7 @@ const FTNd1: React.FC = () => {
                       }));
 
                     
-                      console.log(finalDataNd1);
+                      console.log(finalData);
                     }}
                   >
                     Set Date

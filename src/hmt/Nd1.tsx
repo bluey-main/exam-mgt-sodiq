@@ -87,6 +87,12 @@ const HMTNd1: React.FC = () => {
     })),
   });
 
+  const finalData = {
+    department:'HOSPITALITY MANAGEMENT',
+    class:'ND1',
+    data: finalDataNd1
+  }
+
   const handleOptionChange = (
     event: React.ChangeEvent<HTMLInputElement>,
     index: number
@@ -236,7 +242,7 @@ const HMTNd1: React.FC = () => {
                       }));
 
                     
-                      console.log(finalDataNd1);
+                      console.log(finalData);
                     }}
                   >
                     Set Date

@@ -87,6 +87,12 @@ const PLTNd1: React.FC = () => {
     })),
   });
 
+  const finalData = {
+    department:'POLYMER TECHNOLOGY',
+    class:'ND1',
+    data: finalDataNd1
+  }
+
   const handleOptionChange = (
     event: React.ChangeEvent<HTMLInputElement>,
     index: number
@@ -236,7 +242,7 @@ const PLTNd1: React.FC = () => {
                       }));
 
                     
-                      console.log(finalDataNd1);
+                      console.log(finalData);
                     }}
                   >
                     Set Date

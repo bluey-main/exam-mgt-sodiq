@@ -76,6 +76,7 @@ const Nd1: React.FC = () => {
   };
 
   const [finalDataNd1, setFinalDataNd1] = useState<{ data: DayData[] }>({
+
     data: numberOfDays.map((day, index) => ({
       id: index + 1,
       name: day,
@@ -86,6 +87,12 @@ const Nd1: React.FC = () => {
       active: false,
     })),
   });
+
+  const finalData = {
+    department:'COMPUTER TECHNOLOGY',
+    class:'ND1',
+    data: finalDataNd1
+  }
 
   const handleOptionChange = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -236,7 +243,7 @@ const Nd1: React.FC = () => {
                       }));
 
                     
-                      console.log(finalDataNd1);
+                      console.log(finalData);
                     }}
                   >
                     Set Date
