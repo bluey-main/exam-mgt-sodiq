@@ -86,6 +86,12 @@ const TETNd1: React.FC = () => {
     })),
   });
 
+  const finalData = {
+    department:'TEXTILE TECHNOLOGY',
+    class:'ND1',
+    data: finalDataNd1
+  }
+
   const handleOptionChange = (
     event: React.ChangeEvent<HTMLInputElement>,
     index: number
@@ -235,7 +241,7 @@ const TETNd1: React.FC = () => {
                       }));
 
                     
-                      console.log(finalDataNd1);
+                      console.log(finalData);
                     }}
                   >
                     Set Date
