@@ -232,7 +232,7 @@ const NUTNd2: React.FC = () => {
                           active: dataIndex === index ? true : dayData.active,
                         })),
                       }));
-                      console.log(finalDataNd2);
+                      console.log(finalData);
                     }}
                   >
                     Set Date
