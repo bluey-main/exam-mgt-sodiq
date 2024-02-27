@@ -85,6 +85,12 @@ const NUTNd2: React.FC = () => {
     })),
   });
 
+  const finalData = {
+    department:'NUTRITION AND DIETICS',
+    class:'ND2',
+    data: finalDataNd2
+  }
+
   const handleOptionChange = (
     event: React.ChangeEvent<HTMLInputElement>,
     index: number
