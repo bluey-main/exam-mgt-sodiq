@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import axios from 'axios';
 import {
   Card,
   CardContent,
@@ -15,6 +16,20 @@ import { Link } from "react-router-dom";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const login = async (email:string, password:string) =>{
+    try {
+      const response = axios.post('https://exam-management-six.vercel.app/login', {
+        username: email,
+        password: password
+      })
+      console.log(response)
+    } catch (error) {
+      console.log(error)
+      
+    }
+
+  }
   return (
     <div className="w-full h-screen flex justify-center items-center">
       <Card className="w-[30rem] border-black">
@@ -60,7 +75,7 @@ export default function Login() {
             variant={"outline"}
             className="bg-black text-white w-28 hover:bg-white hover:text-black "
             onClick={() => {
-              console.log(email, password);
+              login(email,password);
             }}
           >
             Login

@@ -11,14 +11,30 @@ import {
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  // const [confirmPassword, setConfirmPassword] = useState("");
   const [role, setRole] = useState("");
+
+  const register = async(email:string, password:string, role:string) => {
+    try {
+      const response = await axios.post('https://exam-management-six.vercel.app/register', {
+        email: email,
+        password: password,
+        role: role
+      })
+    
+      console.log(response.data)
+    } catch (error) {
+      console.log(error)
+      
+    }
+  }
  
   return (
     <div className="w-full h-screen flex justify-center items-center">
@@ -62,8 +78,8 @@ export default function Register() {
               <Input
                 type="password"
                 placeholder="Confirm Password"
-                id="password"
-                onChange={(e) => setConfirmPassword(e.target.value)}
+                id="confirmpassword"
+                // onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </div>
 
@@ -93,7 +109,7 @@ export default function Register() {
             variant={"outline"}
             className="bg-black text-white w-28 hover:bg-white hover:text-black "
             onClick={() => {
-              console.log(email, password,role,confirmPassword);
+              register(email,password,role);
             }}
           >
             Sign Up
